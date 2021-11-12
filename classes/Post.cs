@@ -1,3 +1,8 @@
+/* 
+ * This is the class for a single post and how it is built
+ * 
+ */
+
 namespace assignment3
 {
 
