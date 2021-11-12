@@ -114,6 +114,7 @@ namespace assignment3
               }
               else
               {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write($"Are you sure you want to remove post {postIndex}? Y/n:\n");
                 string answer = Console.ReadLine();
