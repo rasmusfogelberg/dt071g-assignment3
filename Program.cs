@@ -10,8 +10,24 @@ namespace assignment3
   {
     static void Main(string[] args)
     {
+      Console.Write("Starting up. Checking if JSON-file exists...\n");
+      string fileName = @"posts.json";
 
-      string fileName = "posts.json";
+      bool fileExist = File.Exists(fileName);
+      if (fileExist)
+      {
+        Console.WriteLine("File exists. Starting application.");
+      }
+      else
+      {
+        Console.WriteLine("File does not exist. Creating file..");
+        using (StreamWriter sw = File.CreateText(fileName)) {
+         sw.WriteLine("[]");
+        }
+        Console.WriteLine("File created. Starting application.");
+      }
+
+      /* string fileName = "posts.json"; */
       string jsonString = File.ReadAllText(fileName);
       List<Post> posts = JsonConvert.DeserializeObject<List<Post>>(jsonString);
 
